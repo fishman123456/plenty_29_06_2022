@@ -20,10 +20,10 @@
 using namespace std;
 char input_mn()
 {
-	char plenty_ch{'a'};
+	int plenty_cint;
 	cout << "Введите множество A || B\t";
-	cin >> plenty_ch;
-	return plenty_ch;
+	cin >> plenty_cint;
+	return plenty_cint;
 }
 int input_int() {
 	int plenty_int;
@@ -39,7 +39,6 @@ int main()
 	int b_p = 0;
 	int case_1{ 9 };
 	int length = 4;
-	char plenty_ch{};
 	int plenty_int{8};
 	set<int> set1{ a_p };// создаем множество A
 	set<int> set2{ b_p };// создаем множество B
@@ -62,6 +61,7 @@ int main()
 	cout << "\t9_очистить экран" << endl;
 	cout << "\t0_выход" << endl;
 	cout << endl;
+	
 	while (case_1 != 0)
 	{
 		cout << "\tвыберите операцию\t";
@@ -72,17 +72,16 @@ int main()
 		case  1:// 1_для добавления элемента в моножество A||B
 		{
 			input_mn();
-			switch (plenty_ch)
+			switch (plenty_cint)
 			{
-			case 'a':
+			case 1:
 			{
-				
 				cout << "введите элемент для добавления\t";
 				cin >> plenty_int;
 				set1.insert(plenty_int);
 				break;
 			}
-			case 'b':
+			case 2:
 			{
 				int plenty_int;
 				cout << "введите элемент для добавления\t";
