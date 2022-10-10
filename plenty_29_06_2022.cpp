@@ -17,8 +17,21 @@
 #include <cstdlib>
 #include <sstream>
 #include <set> 
-
 using namespace std;
+char input_mn()
+{
+	char plenty_ch{'a'};
+	cout << "Введите множество A || B\t";
+	cin >> plenty_ch;
+	return plenty_ch;
+}
+int input_int() {
+	int plenty_int;
+	cout << "введите элемент для добавления\t";
+	cin >> plenty_int;
+	return plenty_int;
+}
+
 
 int main()
 {
@@ -26,6 +39,8 @@ int main()
 	int b_p = 0;
 	int case_1{ 9 };
 	int length = 4;
+	char plenty_ch{};
+	int plenty_int{8};
 	set<int> set1{ a_p };// создаем множество A
 	set<int> set2{ b_p };// создаем множество B
 	//system("chcp 1251");
@@ -56,14 +71,12 @@ int main()
 		{
 		case  1:// 1_для добавления элемента в моножество A||B
 		{
-			char plenty_ch;
-			int plenty_int;
-			cout << "Введите множество A || B\t";
-			cin >> plenty_ch;
+			input_mn();
 			switch (plenty_ch)
 			{
 			case 'a':
 			{
+				
 				cout << "введите элемент для добавления\t";
 				cin >> plenty_int;
 				set1.insert(plenty_int);
@@ -71,6 +84,7 @@ int main()
 			}
 			case 'b':
 			{
+				int plenty_int;
 				cout << "введите элемент для добавления\t";
 				cin >> plenty_int;
 				set2.insert(plenty_int);
