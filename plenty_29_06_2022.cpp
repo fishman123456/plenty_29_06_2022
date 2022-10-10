@@ -10,6 +10,7 @@
 // https://cpp-python-nsu.inp.nsk.su/textbook/sec3/ch3
 // 09-10-2022 делаем с помощью контейнера set
 // Тип set реализует ассоциативный контейнер "множество". 
+// 10-10-2022 реализуем методы 1,8
 #include <iostream>
 #include <string>
 #include <vector>
@@ -46,70 +47,88 @@ int main()
 	cout << "\t9_очистить экран" << endl;
 	cout << "\t0_выход" << endl;
 	cout << endl;
-	cout << "\tвыберите операцию\t";
-	cin >> case_1;
-	cout << "\n";
-	switch (case_1)
+	while (case_1 != 0)
 	{
-	case  1:// 1_для добавления элемента в моножество A||B
-	{
-		char plenty_ch;
-		int plenty_int;
-		cout >> "Введите множество A || B\t";
-		cin << plenty_ch;
-		if (plenty_ch == 'a')
+		cout << "\tвыберите операцию\t";
+		cin >> case_1;
+		cout << "\n";
+		switch (case_1)
 		{
-			cout >> "введите элемент для добавления\t";
-			cin << plenty_int;
-			set1.insert(plenty_int);
-		}
-		else if (plenty_ == 'b') 
+		case  1:// 1_для добавления элемента в моножество A||B
 		{
-			cout >> "введите элемент для добавления\t";
-			cin << plenty_int;
-			set2.insert(plenty_int);
+			char plenty_ch;
+			int plenty_int;
+			cout << "Введите множество A || B\t";
+			cin >> plenty_ch;
+			switch (plenty_ch)
+			{
+			case 'a':
+			{
+				cout << "введите элемент для добавления\t";
+				cin >> plenty_int;
+				set1.insert(plenty_int);
+				break;
+			}
+			case 'b':
+			{
+				cout << "введите элемент для добавления\t";
+				cin >> plenty_int;
+				set2.insert(plenty_int);
+				break;
+			}
+			break;
+			}
+
 		}
-		else { cout >> "---"; }
-		break;
-	}
-	case  2:// 2_для обьеденения двух множеств A + B
-	{
-		break;
-	}
-	case  3:// 3_для удаления элемента из моножества A||B
-	{
-		break;
-	}
-	case  4:// 4_разность двух множеств A - B
-	{
-		break;
-	}
-	case  5:// 5_пересечение двух множеств A & B
-	{
-		break;
-	}
-	case  6:// 6_присваивание множества A множеству B
-	{
-		break;
-	}
-	case  7:// 7_сравнение двух множеств A & B
-	{
-		break;
-	}
-	case  8:// 8_вывод на консоль двух множеств A & B
-	{
-		break;
-	}
-	case  9:// 9_очистить экран
-	{
-		break;
-	}
-	case  0:// 0_выход
-	{
-		break;
-	}
-	default:
-		break;
+		case  2:// 2_для обьеденения двух множеств A + B
+		{
+			break;
+		}
+		case  3:// 3_для удаления элемента из моножества A||B
+		{
+			break;
+		}
+		case  4:// 4_разность двух множеств A - B
+		{
+			break;
+		}
+		case  5:// 5_пересечение двух множеств A & B
+		{
+			break;
+		}
+		case  6:// 6_присваивание множества A множеству B
+		{
+			break;
+		}
+		case  7:// 7_сравнение двух множеств A & B
+		{
+			break;
+		}
+		case  8:// 8_вывод на консоль двух множеств A & B
+		{
+			for (set<int>::iterator it1 = set1.begin(); it1 != set1.end(); ++it1)
+			{
+				cout << *it1 << ' ';
+			}
+			cout << endl;
+			for (set<int>::iterator it2 = set2.begin(); it2 != set2.end(); ++it2)
+			{
+				cout << *it2 << ' ';
+			}
+			cout << endl;
+			break;
+		}
+		case  9:// 9_очистить экран
+		{
+			break;
+		}
+		case  0:// 0_выход
+		{
+			break;
+		}
+		default:
+			break;
+		}
 	}
 }
 
